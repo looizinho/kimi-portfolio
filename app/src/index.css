@@ -6,26 +6,67 @@
 
 @layer base {
   :root {
-    --background: 0 0% 4%;
-    --foreground: 0 0% 100%;
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 100%;
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 263 70% 66%;
+    color-scheme: light dark;
+    --background: 0 0% 98%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 12%;
+    --primary: 263 70% 56%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 187 94% 43%;
+    --secondary: 187 94% 35%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 64%;
-    --accent: 330 80% 60%;
+    --muted: 0 0% 92%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 330 80% 52%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 263 70% 66%;
+    --border: 0 0% 85%;
+    --input: 0 0% 85%;
+    --ring: 263 70% 56%;
     --radius: 0.625rem;
+    --scrollbar-track: 0 0% 96%;
+    --scrollbar-thumb: 0 0% 70%;
+    --scrollbar-thumb-hover: 263 70% 56%;
+    --selection-bg: 263 70% 80%;
+    --selection-text: 0 0% 12%;
+    --glass-bg: 255 255 255;
+    --glass-bg-alpha: 0.6;
+    --glass-border: 0 0 0;
+    --glass-border-alpha: 0.08;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: 0 0% 4%;
+      --foreground: 0 0% 100%;
+      --card: 0 0% 8%;
+      --card-foreground: 0 0% 100%;
+      --popover: 0 0% 8%;
+      --popover-foreground: 0 0% 100%;
+      --primary: 263 70% 66%;
+      --primary-foreground: 0 0% 100%;
+      --secondary: 187 94% 43%;
+      --secondary-foreground: 0 0% 100%;
+      --muted: 0 0% 15%;
+      --muted-foreground: 0 0% 64%;
+      --accent: 330 80% 60%;
+      --accent-foreground: 0 0% 100%;
+      --border: 0 0% 20%;
+      --input: 0 0% 20%;
+      --ring: 263 70% 66%;
+      --scrollbar-track: 0 0% 4%;
+      --scrollbar-thumb: 0 0% 20%;
+      --scrollbar-thumb-hover: 263 70% 66%;
+      --selection-bg: 263 70% 40%;
+      --selection-text: 0 0% 100%;
+      --glass-bg: 255 255 255;
+      --glass-bg-alpha: 0.05;
+      --glass-border: 255 255 255;
+      --glass-border-alpha: 0.1;
+    }
   }
 }
 
@@ -55,16 +96,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: hsl(var(--scrollbar-track));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333;
+  background: hsl(var(--scrollbar-thumb));
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #8b5cf6;
+  background: hsl(var(--scrollbar-thumb-hover));
 }
 
 /* Text Glow Animation */
@@ -173,9 +214,9 @@
 
 /* Glassmorphism */
 .glass {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgb(var(--glass-bg) / var(--glass-bg-alpha));
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgb(var(--glass-border) / var(--glass-border-alpha));
 }
 
 /* Noise Overlay */
@@ -225,8 +266,8 @@
 
 /* Selection Color */
 ::selection {
-  background: rgba(139, 92, 246, 0.3);
-  color: white;
+  background: hsl(var(--selection-bg) / 0.3);
+  color: hsl(var(--selection-text));
 }
 
 /* Reduced Motion */
