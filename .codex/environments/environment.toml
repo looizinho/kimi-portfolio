@@ -31,11 +31,3 @@ cd app
 pnpm dev:open
 cd ..
 '''
-
-[[actions]]
-name = "Run and Open"
-icon = "run"
-command = '''
-cd app
-pnpm dev:open
-'''
