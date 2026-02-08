@@ -1,2 +1,17 @@
 node_modules
 .DS_Store
+
+# Build outputs
+app/dist
+app/.vite
+app/.turbo
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Logs
+*.log
+
+# Env files
+.env
+.env.*
