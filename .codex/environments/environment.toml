@@ -11,6 +11,7 @@ icon = "run"
 command = '''
 cd app
 pnpm dev
+cd ..
 '''
 
 [[actions]]
@@ -19,4 +20,14 @@ icon = "tool"
 command = '''
 cd app
 pnpm install
+cd ..
+'''
+
+[[actions]]
+name = "Run and Open"
+icon = "run"
+command = '''
+cd app
+pnpm dev:open
+cd ..
 '''
