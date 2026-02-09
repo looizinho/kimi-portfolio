@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 
@@ -6,6 +7,7 @@ const navItems = [
   { label: 'Início', href: '#hero' },
   { label: 'Sobre', href: '#about' },
   { label: 'Projetos', href: '#projects' },
+  { label: 'Trabalhos Realizados', href: '/trabalhos' },
   { label: 'Tecnologias', href: '#tech' },
   { label: 'Contato', href: '#contact' },
 ];
@@ -13,6 +15,8 @@ const navItems = [
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,10 +29,20 @@ export function Navigation() {
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+
+    if (href.startsWith('#')) {
+      if (location.pathname !== '/') {
+        navigate(`/${href}`);
+      } else {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    } else {
+      navigate(href);
     }
+
     setIsMobileMenuOpen(false);
   };
 

@@ -123,11 +123,11 @@ export function Contact() {
         {/* Email */}
         <div ref={emailRef} className="mb-12 opacity-0">
           <a
-            href="mailto:neto@looizinho.pro"
+            href="mailto:lmoraes@me.com"
             className="group inline-flex items-center gap-4 text-2xl sm:text-3xl md:text-4xl text-zinc-300 hover:text-white transition-colors duration-300"
           >
             <Mail className="w-8 h-8 text-violet-400" />
-            <GlitchText>neto@looizinho.pro</GlitchText>
+            <GlitchText>lmoraes@me.com</GlitchText>
             <ArrowUpRight className="w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </a>
         </div>

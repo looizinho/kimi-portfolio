@@ -49,7 +49,7 @@ export function TypewriterText({
       {displayText}
       <span className={cn(
         'inline-block w-0.5 h-5 ml-1 bg-cyan-400',
-        isTyping && indexRef.current < text.length ? 'animate-pulse' : 'opacity-0'
+        isTyping && displayText.length < text.length ? 'animate-pulse' : 'opacity-0'
       )} />
     </span>
   );

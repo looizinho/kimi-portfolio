@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ProjectCard } from '@/components/ProjectCard';
@@ -120,16 +121,14 @@ export function Projects() {
               Quer ver mais?
             </h3>
             <p className="text-zinc-400 text-center mb-8">
-              Confira todos os projetos no meu portfólio completo
+              Confira todos os trabalhos realizados em uma página dedicada
             </p>
-            <a
-              href="https://portfolio.looizinho.pro"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/trabalhos"
               className="px-8 py-4 rounded-full bg-gradient-to-r from-violet-600 to-cyan-500 text-white font-medium hover:shadow-[0_0_30px_rgba(139,92,246,0.5)] transition-shadow duration-300"
             >
-              Ver Portfólio Completo
-            </a>
+              Ver Trabalhos Realizados
+            </Link>
           </div>
         </div>
       </div>

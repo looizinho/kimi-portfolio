@@ -3,11 +3,13 @@ import { useState, useEffect, useRef } from 'react';
 export function useScrollVelocity() {
   const [velocity, setVelocity] = useState(0);
   const lastScrollY = useRef(0);
-  const lastTime = useRef(Date.now());
+  const lastTime = useRef(0);
   const velocityRef = useRef(0);
 
   useEffect(() => {
     let rafId: number;
+    lastTime.current = Date.now();
+    lastScrollY.current = window.scrollY;
     
     const handleScroll = () => {
       const currentTime = Date.now();
