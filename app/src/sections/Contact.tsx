@@ -10,12 +10,19 @@ import {
   Instagram, 
   ExternalLink,
   Mail,
-  ArrowUpRight
+  ArrowUpRight,
+  Phone
 } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const socialLinks = [
+  {
+    name: 'WhatsApp',
+    icon: Phone,
+    url: 'whatsapp://send?phone=5521990244479',
+    description: 'Fale comigo no WhatsApp',
+  },
   {
     name: 'YouTube',
     icon: Youtube,
@@ -41,9 +48,9 @@ const socialLinks = [
     description: 'Bastidores e labs',
   },
   {
-    name: 'Portfólio',
+    name: 'Trabalhos Realizados',
     icon: ExternalLink,
-    url: 'https://portfolio.looizinho.pro',
+    url: '/trabalhos',
     description: 'Cases detalhados',
   },
 ];
