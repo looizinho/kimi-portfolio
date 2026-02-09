@@ -31,3 +31,21 @@ cd app
 pnpm dev:open
 cd ..
 '''
+
+[[actions]]
+name = "Build"
+icon = "tool"
+command = '''
+cd app
+rm -rf dist
+pnpm build
+cd ..
+'''
+
+[[actions]]
+name = "Run Build"
+icon = "run"
+command = '''
+cd app/dist
+serve
+'''
