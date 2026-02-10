@@ -2,6 +2,18 @@
   "intro": "Trabalhos realizados em eventos, festivais e experiências imersivas, com foco em audiovisual, interatividade e tecnologia aplicada ao entretenimento. Aqui reúno as entregas profissionais mais relevantes, separadas dos projetos pessoais ou autorais.\n\nSe quiser mais detalhes sobre algum trabalho específico, é só entrar em contato.",
   "works": [
     {
+      "title": "Painel de LED com 50 metros de largura por 3.5 metros de altura",
+      "client": "IK Eventos",
+      "year": 2021,
+      "location": "Vitória, ES",
+      "role": "Gerenciamento de sinal",
+      "summary": "Transmissão ao vivo com múltiplas câmeras e direção geral para o festival. Fluxo completo de captação, streaming e supervisão técnica.",
+      "tags": ["Live Streaming", "YouTube", "Produção"],
+      "link": "https://exemplo.com",
+      "youtube": "https://youtu.be/cuhxRvVugGY?si=Js-Vo1j2qE1mHPJP",
+      "image": "https://res.cloudinary.com/looizinho-portfolio/image/upload/v1770753788/conescap_nqibxa.png"
+    },
+    {
       "title": "Festival Harmonia",
       "client": "Produção X",
       "year": 2024,
