@@ -2,11 +2,10 @@ import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { parse as parseYaml } from 'yaml';
 import { FluidBackground } from '@/components/FluidBackground';
 import { Navigation } from '@/components/Navigation';
 import { WorkCard } from '@/components/WorkCard';
-import trabalhosMarkdown from '@/content/trabalhos-realizados.md?raw';
+import trabalhosData from '@/content/trabalhos-realizados.json';
 
 interface WorkItem {
   title: string;
@@ -20,29 +19,15 @@ interface WorkItem {
   image?: string;
 }
 
-function parseFrontMatter(raw: string) {
-  if (!raw.startsWith('---')) {
-    return { data: {}, content: raw };
-  }
-
-  const match = raw.match(/^---\s*[\r\n]+([\s\S]*?)\r?\n---\s*[\r\n]+/);
-  if (!match) {
-    return { data: {}, content: raw };
-  }
-
-  const data = parseYaml(match[1]) ?? {};
-  const content = raw.slice(match[0].length);
-  return { data, content };
-}
-
 export function WorksPage() {
   const { intro, works } = useMemo(() => {
-    const parsed = parseFrontMatter(trabalhosMarkdown);
-    const data = parsed.data as { works?: WorkItem[] };
-    const list = Array.isArray(data?.works) ? data.works : [];
+    const list = Array.isArray(trabalhosData?.works)
+      ? (trabalhosData.works as WorkItem[])
+      : [];
 
     return {
-      intro: parsed.content,
+      intro:
+        typeof trabalhosData?.intro === 'string' ? trabalhosData.intro : '',
       works: list,
     };
   }, []);
