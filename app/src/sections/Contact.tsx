@@ -44,7 +44,7 @@ const socialLinks = [
   {
     name: 'Instagram',
     icon: Instagram,
-    url: 'https://instagram.com',
+    url: 'https://instagram.com/luizzinho',
     description: 'Bastidores e labs',
   },
   {
