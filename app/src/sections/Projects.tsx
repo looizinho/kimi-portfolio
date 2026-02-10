@@ -3,32 +3,11 @@ import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ProjectCard } from '@/components/ProjectCard';
+import projetosDestacadosData from '@/content/projetos-destacados.json';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const projects = [
-  {
-    title: 'Festa da UVA',
-    subtitle: 'Realidade Aumentada',
-    description: 'Implementação de experiências de Realidade Aumentada em um dos maiores festivais da região, criando interatividade entre o público e elementos digitais.',
-    image: 'https://s2.loli.net/2026/02/09/iNCQ6VTH3k4BtlD.jpg',
-    tags: ['RA', 'Interatividade', 'Eventos'],
-  },
-  {
-    title: 'Festival Harmonia',
-    subtitle: 'Diogo Nogueira / RJ',
-    description: 'Transmissão ao vivo no YouTube do festival com Diogo Nogueira no Rio de Janeiro, com produção audiovisual completa e direção de câmeras.',
-    image: 'https://s2.loli.net/2026/02/09/EB256kPupc8TbhC.jpg',
-    tags: ['Live Streaming', 'YouTube', 'Produção'],
-  },
-  {
-    title: 'Rock The Mountain',
-    subtitle: 'Painel 50 metros!',
-    description: 'Trabalho com painéis de LED de grandes dimensões em um dos maiores festivais de rock do país. Gerenciamento de sinal e mapeamento de vídeo.',
-    image: 'https://s2.loli.net/2026/02/09/XBNAHpvTIb8md3D.webp',
-    tags: ['LED', 'Video Mapping', 'Escala'],
-  },
-];
+const { projects } = projetosDestacadosData;
 
 export function Projects() {
   const sectionRef = useRef<HTMLElement>(null);

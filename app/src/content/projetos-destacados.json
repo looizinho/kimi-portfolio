@@ -1,0 +1,26 @@
+{
+  "intro": "Seleção de projetos em destaque que representam diferentes frentes do meu trabalho. Esta curadoria é intencionalmente enxuta para dar uma visão rápida do tipo de entrega, do contexto e da linguagem visual que costumo aplicar.",
+  "projects": [
+    {
+      "title": "Luzes do Centro",
+      "subtitle": "Instalação Urbana",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "image": "https://s2.loli.net/2026/02/09/iNCQ6VTH3k4BtlD.jpg",
+      "tags": ["Mapping", "Cidade", "Experiência"]
+    },
+    {
+      "title": "Pulso Festival",
+      "subtitle": "Live Experience",
+      "description": "Direção de conteúdo e operação de transmissão ao vivo com multicâmeras, entregando uma experiência híbrida para público presencial e online.",
+      "image": "https://s2.loli.net/2026/02/09/EB256kPupc8TbhC.jpg",
+      "tags": ["Streaming", "Produção", "Música"]
+    },
+    {
+      "title": "Céu de LED",
+      "subtitle": "Palco 360°",
+      "description": "Projeto de palco imersivo com painéis de LED em grande formato, sincronizados com o show e integrados ao design de luz.",
+      "image": "https://s2.loli.net/2026/02/09/XBNAHpvTIb8md3D.webp",
+      "tags": ["LED", "Palco", "Show"]
+    }
+  ]
+}
