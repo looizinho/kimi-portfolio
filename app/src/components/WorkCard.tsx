@@ -1,5 +1,6 @@
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Play } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 
 interface WorkItem {
   title: string;
@@ -10,6 +11,7 @@ interface WorkItem {
   summary?: string;
   tags?: string[];
   link?: string;
+  youtube?: string;
   image?: string;
 }
 
@@ -17,7 +19,49 @@ interface WorkCardProps {
   work: WorkItem;
 }
 
+function getYoutubeEmbedUrl(url: string) {
+  try {
+    const parsed = new URL(url);
+    const hostname = parsed.hostname.replace('www.', '');
+
+    if (hostname === 'youtu.be') {
+      const id = parsed.pathname.replace('/', '');
+      return id ? `https://www.youtube.com/embed/${id}` : url;
+    }
+
+    if (hostname.includes('youtube.com') || hostname.includes('youtube-nocookie.com')) {
+      if (parsed.pathname.startsWith('/embed/')) {
+        const id = parsed.pathname.replace('/embed/', '');
+        return id ? `https://www.youtube.com/embed/${id}` : url;
+      }
+
+      const id = parsed.searchParams.get('v');
+      return id ? `https://www.youtube.com/embed/${id}` : url;
+    }
+  } catch {
+    return url;
+  }
+
+  return url;
+}
+
+function withAutoplay(url: string) {
+  try {
+    const parsed = new URL(url);
+    parsed.searchParams.set('autoplay', '1');
+    parsed.searchParams.set('mute', '1');
+    parsed.searchParams.set('rel', '0');
+    return parsed.toString();
+  } catch {
+    return url;
+  }
+}
+
 export function WorkCard({ work }: WorkCardProps) {
+  const youtubeEmbedUrl = work.youtube
+    ? withAutoplay(getYoutubeEmbedUrl(work.youtube))
+    : null;
+
   return (
     <article className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm">
       {work.image && (
@@ -28,6 +72,38 @@ export function WorkCard({ work }: WorkCardProps) {
             className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+          {youtubeEmbedUrl && (
+            <Dialog>
+              <DialogTrigger asChild>
+                <button
+                  type="button"
+                  className={cn(
+                    'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2',
+                    'text-white/90 transition-all duration-300',
+                    'hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70'
+                  )}
+                  aria-label={`Reproduzir vídeo de ${work.title}`}
+                >
+                  <span className="flex items-center justify-center rounded-full border border-white/40 bg-black/40 p-4 shadow-lg backdrop-blur">
+                    <Play className="h-7 w-7 translate-x-[1px]" />
+                  </span>
+                </button>
+              </DialogTrigger>
+              <DialogContent
+                className="border-white/10 bg-zinc-950/95 p-0 sm:max-w-4xl"
+              >
+                <div className="relative w-full pt-[56.25%]">
+                  <iframe
+                    src={youtubeEmbedUrl}
+                    title={`Vídeo de ${work.title}`}
+                    className="absolute inset-0 h-full w-full rounded-lg"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
+              </DialogContent>
+            </Dialog>
+          )}
         </div>
       )}
 
