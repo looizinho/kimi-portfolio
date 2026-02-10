@@ -26,13 +26,13 @@ const socialLinks = [
   {
     name: 'YouTube',
     icon: Youtube,
-    url: 'https://youtube.com',
+    url: 'https://youtube.com/@looizinho',
     description: 'Projetos e tutoriais',
   },
   {
     name: 'GitHub',
     icon: Github,
-    url: 'https://github.com',
+    url: 'https://github.com/looizinho',
     description: 'Código e repositórios',
   },
   {
