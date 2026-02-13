@@ -84,7 +84,10 @@ export function Navigation() {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden p-2 text-white"
+              type="button"
+              aria-label={isMobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
+              aria-expanded={isMobileMenuOpen}
+              className="md:hidden inline-flex items-center justify-center rounded-lg border border-white/20 bg-black/60 p-2.5 text-white backdrop-blur-sm transition-colors hover:bg-black/80"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
