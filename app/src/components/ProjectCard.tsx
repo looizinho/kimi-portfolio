@@ -53,7 +53,7 @@ export function ProjectCard({
       ref={cardRef}
       className={cn(
         'group relative flex-shrink-0',
-        'w-[80vw] max-w-[900px] h-[60vh] max-h-[600px]',
+        'w-full md:w-[80vw] max-w-[900px] h-[52vh] md:h-[60vh] max-h-[600px]',
         'rounded-3xl overflow-hidden',
         'cursor-pointer',
         className
