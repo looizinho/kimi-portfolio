@@ -36,15 +36,20 @@ export function Projects() {
       // Horizontal scroll
       const track = trackRef.current;
       if (track) {
-        const scrollWidth = track.scrollWidth - window.innerWidth;
+        const getScrollDistance = () => Math.max(track.scrollWidth - window.innerWidth, 0);
+
+        if (getScrollDistance() === 0) {
+          gsap.set(track, { x: 0 });
+          return;
+        }
 
         gsap.to(track, {
-          x: -scrollWidth,
+          x: () => -getScrollDistance(),
           ease: 'none',
           scrollTrigger: {
             trigger: containerRef.current,
             start: 'top top',
-            end: () => `+=${scrollWidth}`,
+            end: () => `+=${getScrollDistance()}`,
             pin: true,
             scrub: 1,
             anticipatePin: 1,
