@@ -65,13 +65,13 @@ export function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden">
+    <section className="relative min-h-dvh flex flex-col items-center justify-center px-4 overflow-hidden">
       {/* Content */}
       <div className="text-center z-10">
         {/* Main Heading */}
         <h1
           ref={headingRef}
-          className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-white mb-6 font-['Space_Grotesk'] tracking-tight text-glow"
+          className="text-4xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-white mb-6 font-['Space_Grotesk'] tracking-tight text-glow"
         >
           {decodedText || originalText}
         </h1>

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -10,25 +10,14 @@ gsap.registerPlugin(ScrollTrigger);
 const { projects } = projetosDestacadosData;
 
 export function Projects() {
-  const [isDesktop, setIsDesktop] = useState(() => window.innerWidth >= 768);
   const sectionRef = useRef<HTMLElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(min-width: 768px)');
-    const updateViewport = (event: MediaQueryListEvent) => {
-      setIsDesktop(event.matches);
-    };
-
-    mediaQuery.addEventListener('change', updateViewport);
-
-    return () => mediaQuery.removeEventListener('change', updateViewport);
-  }, []);
-
-  useEffect(() => {
     const ctx = gsap.context(() => {
+      // Heading animation
       gsap.fromTo(
         headingRef.current,
         { opacity: 0, y: 30 },
@@ -44,35 +33,37 @@ export function Projects() {
         }
       );
 
+      // Horizontal scroll
       const track = trackRef.current;
-      if (!track) return;
+      if (track) {
+        const scrollWidth = track.scrollWidth - window.innerWidth;
 
-      if (!isDesktop) {
-        gsap.set(track, { clearProps: 'all' });
-        return;
+        gsap.to(track, {
+          x: -scrollWidth,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top top',
+            end: () => `+=${scrollWidth}`,
+            pin: true,
+            scrub: 1,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+          },
+        });
       }
-
-      const scrollWidth = track.scrollWidth - window.innerWidth;
-      gsap.to(track, {
-        x: -scrollWidth,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top top',
-          end: () => `+=${scrollWidth}`,
-          pin: true,
-          scrub: 1,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        },
-      });
     }, sectionRef);
 
     return () => ctx.revert();
-  }, [isDesktop]);
+  }, []);
 
   return (
-    <section ref={sectionRef} id="projects" className="relative">
+    <section
+      ref={sectionRef}
+      id="projects"
+      className="relative"
+    >
+      {/* Section Heading */}
       <div className="py-16 px-4 sm:px-6 lg:px-8">
         <h2
           ref={headingRef}
@@ -85,11 +76,12 @@ export function Projects() {
         </h2>
       </div>
 
-      <div ref={containerRef} className="relative h-auto md:h-screen">
+      {/* Horizontal Scroll Container */}
+      <div ref={containerRef} className="relative h-screen overflow-hidden">
         <div
           ref={trackRef}
-          className="relative md:absolute md:top-0 md:left-0 flex flex-col md:flex-row items-center md:h-full gap-6 md:gap-8 px-4 md:px-8 pb-10 md:pb-0"
-          style={{ width: isDesktop ? 'fit-content' : '100%' }}
+          className="absolute top-0 left-0 h-full flex items-center gap-8 px-8"
+          style={{ width: 'fit-content' }}
         >
           {projects.map((project) => (
             <ProjectCard
@@ -102,7 +94,8 @@ export function Projects() {
             />
           ))}
 
-          <div className="flex-shrink-0 w-full md:w-[40vw] max-w-[500px] min-h-[280px] md:h-[60vh] md:max-h-[600px] rounded-3xl glass flex flex-col items-center justify-center p-8">
+          {/* End Card */}
+          <div className="flex-shrink-0 w-[40vw] max-w-[500px] h-[60vh] max-h-[600px] rounded-3xl glass flex flex-col items-center justify-center p-8">
             <h3 className="text-3xl font-bold text-white mb-4 font-['Space_Grotesk'] text-center">
               Quer ver mais?
             </h3>
