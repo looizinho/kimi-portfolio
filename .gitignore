@@ -2,9 +2,9 @@ node_modules
 .DS_Store
 
 # Build outputs
-app/dist
-app/.vite
-app/.turbo
+dist
+.vite
+.turbo
 
 # TypeScript build info
 *.tsbuildinfo

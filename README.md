@@ -1,43 +1,73 @@
-# Kimi Portfolio
+# React + TypeScript + Vite
 
-## Project Overview
-This portfolio project showcases the work and skills of the developer. It is designed to provide a comprehensive view of the developer's capabilities, highlighting important projects and experiences. 
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Features
-- Responsive Design: The portfolio is accessible on all devices, including desktops, tablets, and smartphones.
-- Project Showcases: Each project includes details such as technologies used, project descriptions, and links to live demos.
-- Contact Form: Easy way for visitors to reach out for inquiries or collaborations.
-- Blog Section: Optional blog to share thoughts or tutorials related to web development.
+Currently, two official plugins are available:
 
-## Tech Stack
-- **HTML5**: For the basic structure of web pages.
-- **CSS3**: For styling and layout.
-- **JavaScript**: For interactive elements.
-- **React**: For building user interfaces.
-- **Node.js**: For server-side operations, if applicable.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Setup Instructions
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/looizinho/kimi-portfolio.git
-   ```
-2. Navigate into the project directory:
-   ```bash
-   cd kimi-portfolio
-   ```
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
-4. Start the development server:
-   ```bash
-   npm start
-   ```
+## React Compiler
 
-## Usage Guidelines
-- Explore different sections of the portfolio to learn more about the projects.
-- Use the contact form for any inquiries.
-- Contributions are welcome! Feel free to open issues or submit pull requests.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
----
-This README.md file provides foundational information on how to navigate and utilize the portfolio effectively.
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
+
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
+
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
