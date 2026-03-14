@@ -1,73 +1,81 @@
-# React + TypeScript + Vite
+# Portfolio — Luizinho Neto
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfólio pessoal construído com **React + TypeScript + Vite**, com foco em experiência visual (animações, efeitos e navegação fluida) para apresentar projetos, trabalhos profissionais e galeria.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Framework:** React 19
+- **Build tool:** Vite 7
+- **Linguagem:** TypeScript
+- **Estilo:** Tailwind CSS
+- **Roteamento:** React Router
+- **Animações:** GSAP, Lenis, Three.js + React Three Fiber
+- **UI base:** componentes em `src/components/ui` (Radix + utilitários)
 
-## React Compiler
+## Rotas da aplicação
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `/` → Home (Hero, Sobre, Projetos, Tech Stack, Contato)
+- `/trabalhos` → Trabalhos realizados
+- `/galeria` → Galeria do Instagram
 
-## Expanding the ESLint configuration
+## Conteúdo orientado a dados
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Os dados principais estão em JSON e são renderizados pelas páginas/componentes:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- `src/content/projetos-destacados.json`
+- `src/content/trabalhos-realizados.json`
+- `src/content/galeria-instagram.json`
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Estrutura principal
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```text
+src/
+  components/
+    ui/
+  content/
+  hooks/
+  lib/
+  pages/
+  sections/
+  App.tsx
+  main.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Como rodar localmente
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Pré-requisito: **pnpm** instalado.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+pnpm install
+pnpm dev
 ```
+
+Servidor local padrão:
+- `http://localhost:5173`
+
+## Teste remoto (Tailnet)
+
+Este projeto já está configurado no Vite com:
+
+- `server.allowedHosts: ["sundabot.tail17794.ts.net"]`
+
+URL remota usada no ambiente:
+- `http://sundabot.tail17794.ts.net`
+
+## Scripts úteis
+
+```bash
+pnpm dev        # sobe ambiente de desenvolvimento
+pnpm dev:open   # abre navegador e expõe host
+pnpm build      # type-check + build de produção
+pnpm preview    # preview do build localmente
+pnpm lint       # lint com ESLint
+```
+
+## Deploy
+
+Existe configuração de deploy em `vercel.json`.
+
+---
+
+Se quiser, na próxima etapa eu também atualizo este README com uma seção de contribuição (padrão de branch/PR e convenções de commit) para facilitar manutenção do projeto.
