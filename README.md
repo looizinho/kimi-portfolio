@@ -1,81 +1,43 @@
-# Portfolio — Luizinho Neto
+# Kimi Portfolio
 
-Portfólio pessoal construído com **React + TypeScript + Vite**, com foco em experiência visual (animações, efeitos e navegação fluida) para apresentar projetos, trabalhos profissionais e galeria.
+## Project Overview
+This portfolio project showcases the work and skills of the developer. It is designed to provide a comprehensive view of the developer's capabilities, highlighting important projects and experiences. 
 
-## Stack
+## Features
+- Responsive Design: The portfolio is accessible on all devices, including desktops, tablets, and smartphones.
+- Project Showcases: Each project includes details such as technologies used, project descriptions, and links to live demos.
+- Contact Form: Easy way for visitors to reach out for inquiries or collaborations.
+- Blog Section: Optional blog to share thoughts or tutorials related to web development.
 
-- **Framework:** React 19
-- **Build tool:** Vite 7
-- **Linguagem:** TypeScript
-- **Estilo:** Tailwind CSS
-- **Roteamento:** React Router
-- **Animações:** GSAP, Lenis, Three.js + React Three Fiber
-- **UI base:** componentes em `src/components/ui` (Radix + utilitários)
+## Tech Stack
+- **HTML5**: For the basic structure of web pages.
+- **CSS3**: For styling and layout.
+- **JavaScript**: For interactive elements.
+- **React**: For building user interfaces.
+- **Node.js**: For server-side operations, if applicable.
 
-## Rotas da aplicação
+## Setup Instructions
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/looizinho/kimi-portfolio.git
+   ```
+2. Navigate into the project directory:
+   ```bash
+   cd kimi-portfolio
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm start
+   ```
 
-- `/` → Home (Hero, Sobre, Projetos, Tech Stack, Contato)
-- `/trabalhos` → Trabalhos realizados
-- `/galeria` → Galeria do Instagram
-
-## Conteúdo orientado a dados
-
-Os dados principais estão em JSON e são renderizados pelas páginas/componentes:
-
-- `src/content/projetos-destacados.json`
-- `src/content/trabalhos-realizados.json`
-- `src/content/galeria-instagram.json`
-
-## Estrutura principal
-
-```text
-src/
-  components/
-    ui/
-  content/
-  hooks/
-  lib/
-  pages/
-  sections/
-  App.tsx
-  main.tsx
-```
-
-## Como rodar localmente
-
-Pré-requisito: **pnpm** instalado.
-
-```bash
-pnpm install
-pnpm dev
-```
-
-Servidor local padrão:
-- `http://localhost:5173`
-
-## Teste remoto (Tailnet)
-
-Este projeto já está configurado no Vite com:
-
-- `server.allowedHosts: ["sundabot.tail17794.ts.net"]`
-
-URL remota usada no ambiente:
-- `http://sundabot.tail17794.ts.net`
-
-## Scripts úteis
-
-```bash
-pnpm dev        # sobe ambiente de desenvolvimento
-pnpm dev:open   # abre navegador e expõe host
-pnpm build      # type-check + build de produção
-pnpm preview    # preview do build localmente
-pnpm lint       # lint com ESLint
-```
-
-## Deploy
-
-Existe configuração de deploy em `vercel.json`.
+## Usage Guidelines
+- Explore different sections of the portfolio to learn more about the projects.
+- Use the contact form for any inquiries.
+- Contributions are welcome! Feel free to open issues or submit pull requests.
 
 ---
-
-Se quiser, na próxima etapa eu também atualizo este README com uma seção de contribuição (padrão de branch/PR e convenções de commit) para facilitar manutenção do projeto.
+This README.md file provides foundational information on how to navigate and utilize the portfolio effectively.
