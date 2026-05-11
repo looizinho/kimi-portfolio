@@ -8,11 +8,11 @@ interface TiltCardProps {
   glowColor?: string;
 }
 
-export function TiltCard({ 
-  children, 
-  className, 
+export function TiltCard({
+  children,
+  className,
   tiltAmount = 15,
-  glowColor = 'rgba(139, 92, 246, 0.3)'
+  glowColor = 'rgba(131, 165, 152, 0.3)'
 }: TiltCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [transform, setTransform] = useState({ rotateX: 0, rotateY: 0 });

@@ -67,11 +67,11 @@ export function MagneticButton({
       ref={buttonRef}
       className={cn(
         'relative inline-flex items-center justify-center',
-        'px-8 py-4 font-medium text-white',
-        'bg-gradient-to-r from-violet-600 to-cyan-500',
+        'px-8 py-4 font-medium text-primary-foreground',
+        'bg-gradient-to-r from-primary to-secondary',
         'rounded-full overflow-hidden',
         'transition-shadow duration-300',
-        'hover:shadow-[0_0_30px_rgba(139,92,246,0.5)]',
+        'hover:shadow-[0_0_30px_rgba(131,165,152,0.5)]',
         'active:scale-95',
         className
       )}

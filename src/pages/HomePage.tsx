@@ -40,7 +40,7 @@ export function HomePage() {
   }, [location.hash]);
 
   return (
-    <div className="relative min-h-screen bg-[#0a0a0a] noise-overlay">
+    <div className="relative min-h-screen bg-background noise-overlay">
       {/* Fluid Background */}
       <FluidBackground />
 

@@ -6,26 +6,50 @@
 
 @layer base {
   :root {
-    --background: 0 0% 4%;
-    --foreground: 0 0% 100%;
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 100%;
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 263 70% 66%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 187 94% 43%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 64%;
-    --accent: 330 80% 60%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 263 70% 66%;
+    /* Gruvbox Dark Mode */
+    --background: 0 0% 16%;
+    --foreground: 43 59% 81%;
+    --card: 20 5% 22%;
+    --card-foreground: 43 59% 81%;
+    --popover: 20 3% 19%;
+    --popover-foreground: 43 59% 81%;
+    --primary: 157 16% 58%;
+    --primary-foreground: 20 5% 22%;
+    --secondary: 104 35% 62%;
+    --secondary-foreground: 20 5% 22%;
+    --muted: 30 12% 51%;
+    --muted-foreground: 28 11% 44%;
+    --accent: 157 16% 58%;
+    --accent-foreground: 20 5% 22%;
+    --destructive: 6 96% 59%;
+    --destructive-foreground: 43 59% 81%;
+    --border: 28 11% 44%;
+    --input: 20 5% 22%;
+    --ring: 157 16% 58%;
     --radius: 0.625rem;
+  }
+
+  .light {
+    /* Gruvbox Light Mode */
+    --background: 48 87% 88%;
+    --foreground: 20 5% 22%;
+    --card: 43 59% 81%;
+    --card-foreground: 20 5% 22%;
+    --popover: 46 67% 84%;
+    --popover-foreground: 20 5% 22%;
+    --primary: 190 89% 25%;
+    --primary-foreground: 48 87% 88%;
+    --secondary: 143 30% 37%;
+    --secondary-foreground: 48 87% 88%;
+    --muted: 30 12% 51%;
+    --muted-foreground: 35 17% 59%;
+    --accent: 190 89% 25%;
+    --accent-foreground: 48 87% 88%;
+    --destructive: 358 100% 31%;
+    --destructive-foreground: 48 87% 88%;
+    --border: 35 17% 59%;
+    --input: 43 59% 81%;
+    --ring: 190 89% 25%;
   }
 }
 
@@ -55,29 +79,29 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: hsl(var(--background));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333;
+  background: hsl(var(--border));
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #8b5cf6;
+  background: hsl(var(--primary));
 }
 
 /* Text Glow Animation */
 @keyframes text-glow {
   0%, 100% {
-    text-shadow: 0 0 20px rgba(139, 92, 246, 0.5),
-                 0 0 40px rgba(139, 92, 246, 0.3),
-                 0 0 60px rgba(6, 182, 212, 0.2);
+    text-shadow: 0 0 20px rgba(131, 165, 152, 0.5),
+                 0 0 40px rgba(131, 165, 152, 0.3),
+                 0 0 60px rgba(142, 192, 124, 0.2);
   }
   50% {
-    text-shadow: 0 0 30px rgba(139, 92, 246, 0.7),
-                 0 0 60px rgba(139, 92, 246, 0.5),
-                 0 0 90px rgba(6, 182, 212, 0.3);
+    text-shadow: 0 0 30px rgba(131, 165, 152, 0.7),
+                 0 0 60px rgba(131, 165, 152, 0.5),
+                 0 0 90px rgba(142, 192, 124, 0.3);
   }
 }
 
@@ -215,7 +239,7 @@
   left: 0;
   width: 0;
   height: 1px;
-  background: #06b6d4;
+  background: hsl(var(--primary));
   transition: width 0.3s ease;
 }
 
@@ -225,8 +249,8 @@
 
 /* Selection Color */
 ::selection {
-  background: rgba(139, 92, 246, 0.3);
-  color: white;
+  background: hsl(var(--primary) / 0.3);
+  color: hsl(var(--foreground));
 }
 
 /* Reduced Motion */
