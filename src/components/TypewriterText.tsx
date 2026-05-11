@@ -48,7 +48,7 @@ export function TypewriterText({
     <span className={cn('font-mono', className)}>
       {displayText}
       <span className={cn(
-        'inline-block w-0.5 h-5 ml-1 bg-cyan-400',
+        'inline-block w-0.5 h-5 ml-1 bg-primary',
         isTyping && displayText.length < text.length ? 'animate-pulse' : 'opacity-0'
       )} />
     </span>

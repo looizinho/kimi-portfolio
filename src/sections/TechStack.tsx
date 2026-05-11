@@ -134,7 +134,7 @@ export function TechStack() {
           className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-8 text-center font-['Space_Grotesk']"
         >
           Tecnologias &{' '}
-          <span className="bg-gradient-to-r from-violet-400 to-pink-400 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
             Ferramentas
           </span>
         </h2>

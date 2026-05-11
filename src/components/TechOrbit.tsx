@@ -24,8 +24,8 @@ export function TechOrbit({ technologies, className }: TechOrbitProps) {
     <div className={cn('relative w-full h-[500px] flex items-center justify-center', className)}>
       {/* Center Element */}
       <div className="absolute z-10 flex flex-col items-center justify-center">
-        <div className="w-24 h-24 rounded-full bg-gradient-to-br from-violet-600 to-cyan-500 flex items-center justify-center shadow-[0_0_40px_rgba(139,92,246,0.5)]">
-          <span className="text-2xl font-bold text-white font-['Space_Grotesk']">STACK</span>
+        <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-[0_0_40px_rgba(131,165,152,0.5)]">
+          <span className="text-2xl font-bold text-primary-foreground font-['Space_Grotesk']">STACK</span>
         </div>
       </div>
 
@@ -55,7 +55,7 @@ export function TechOrbit({ technologies, className }: TechOrbitProps) {
                 y1="200"
                 x2={x}
                 y2={y}
-                stroke="rgba(139, 92, 246, 0.2)"
+                stroke="rgba(131, 165, 152, 0.2)"
                 strokeWidth="1"
                 strokeDasharray="4 4"
                 className="pulse-line"
@@ -79,8 +79,8 @@ export function TechOrbit({ technologies, className }: TechOrbitProps) {
                 'flex items-center justify-center',
                 'rounded-xl glass',
                 'cursor-pointer transition-all duration-300',
-                'hover:scale-150 hover:bg-violet-500/20',
-                hoveredIndex === index && 'scale-150 bg-violet-500/20 z-20',
+                'hover:scale-150 hover:bg-primary/20',
+                hoveredIndex === index && 'scale-150 bg-primary/20 z-20',
                 !isPaused && 'counter-rotate'
               )}
               style={{
@@ -119,8 +119,8 @@ export function TechOrbit({ technologies, className }: TechOrbitProps) {
       </div>
 
       {/* Outer Glow Ring */}
-      <div 
-        className="absolute w-[450px] h-[450px] rounded-full border border-violet-500/10 pointer-events-none"
+      <div
+        className="absolute w-[450px] h-[450px] rounded-full border border-primary/10 pointer-events-none"
         style={{ transform: 'rotateX(20deg)' }}
       />
     </div>

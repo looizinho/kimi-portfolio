@@ -34,20 +34,20 @@ export function GalleryPage() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-[#0a0a0a] noise-overlay">
+    <div className="relative min-h-screen bg-background noise-overlay">
       <FluidBackground />
       <Navigation />
 
       <main className="relative z-10 pt-32 pb-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <header className="text-center mb-16">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white font-['Space_Grotesk']">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground font-['Space_Grotesk']">
               Galeria do{' '}
-              <span className="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 Instagram
               </span>
             </h1>
-            <div className="mt-6 text-zinc-300 text-base sm:text-lg max-w-3xl mx-auto">
+            <div className="mt-6 text-foreground/80 text-base sm:text-lg max-w-3xl mx-auto">
               <ReactMarkdown remarkPlugins={[remarkGfm]}>{intro}</ReactMarkdown>
             </div>
 
@@ -57,7 +57,7 @@ export function GalleryPage() {
                   href={profile.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-gradient-to-r from-violet-600 to-cyan-500 text-white font-medium hover:shadow-[0_0_30px_rgba(139,92,246,0.5)] transition-shadow duration-300"
+                  className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-gradient-to-r from-primary to-secondary text-primary-foreground font-medium hover:shadow-[0_0_30px_rgba(131,165,152,0.5)] transition-shadow duration-300"
                 >
                   Seguir @{profile.handle}
                 </a>

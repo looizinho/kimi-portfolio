@@ -63,9 +63,9 @@ export function Navigation() {
             <a
               href="#hero"
               onClick={(e) => handleNavClick(e, '#hero')}
-              className="text-xl font-bold text-white font-['Space_Grotesk'] hover:text-violet-400 transition-colors"
+              className="text-xl font-bold text-white font-['Space_Grotesk'] hover:text-secondary transition-colors"
             >
-              LN<span className="text-violet-400">.</span>
+              LN<span className="text-secondary">.</span>
             </a>
 
             {/* Desktop Navigation */}
@@ -112,7 +112,7 @@ export function Navigation() {
               href={item.href}
               onClick={(e) => handleNavClick(e, item.href)}
               className={cn(
-                'text-2xl font-medium text-white hover:text-violet-400 transition-all duration-300',
+                'text-2xl font-medium text-white hover:text-secondary transition-all duration-300',
                 isMobileMenuOpen
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-4'

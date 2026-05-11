@@ -81,11 +81,11 @@ export function Hero() {
           ref={subheadingRef}
           className="text-lg sm:text-xl md:text-2xl text-zinc-400 mb-12 opacity-0"
         >
-          <span className="text-violet-400">Tecnologia</span>
+          <span className="text-secondary">Tecnologia</span>
           <span className="mx-3 text-zinc-600">·</span>
-          <span className="text-cyan-400">Audiovisual</span>
+          <span className="text-primary">Audiovisual</span>
           <span className="mx-3 text-zinc-600">·</span>
-          <span className="text-pink-400">Interatividade</span>
+          <span className="text-accent">Interatividade</span>
         </p>
 
         {/* CTA Button */}
@@ -102,9 +102,9 @@ export function Hero() {
       </div>
 
       {/* Decorative Elements */}
-      <div className="absolute top-1/4 left-10 w-2 h-2 rounded-full bg-violet-500 animate-pulse" />
-      <div className="absolute top-1/3 right-20 w-3 h-3 rounded-full bg-cyan-500 animate-pulse" style={{ animationDelay: '0.5s' }} />
-      <div className="absolute bottom-1/4 left-1/4 w-2 h-2 rounded-full bg-pink-500 animate-pulse" style={{ animationDelay: '1s' }} />
+      <div className="absolute top-1/4 left-10 w-2 h-2 rounded-full bg-secondary animate-pulse" />
+      <div className="absolute top-1/3 right-20 w-3 h-3 rounded-full bg-primary animate-pulse" style={{ animationDelay: '0.5s' }} />
+      <div className="absolute bottom-1/4 left-1/4 w-2 h-2 rounded-full bg-accent animate-pulse" style={{ animationDelay: '1s' }} />
     </section>
   );
 }

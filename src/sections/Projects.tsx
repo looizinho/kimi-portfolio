@@ -62,10 +62,10 @@ export function Projects() {
       <div className="py-16 px-4 sm:px-6 lg:px-8">
         <h2
           ref={headingRef}
-          className="text-4xl sm:text-5xl md:text-6xl font-bold text-white text-center font-['Space_Grotesk']"
+          className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground text-center font-['Space_Grotesk']"
         >
           Projetos{' '}
-          <span className="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
             Destacados
           </span>
         </h2>
@@ -92,7 +92,7 @@ export function Projects() {
         <div className="mx-auto mt-10 flex max-w-7xl justify-center">
           <Link
             to="/trabalhos"
-            className="rounded-full bg-gradient-to-r from-violet-600 to-cyan-500 px-8 py-4 font-medium text-white transition-shadow duration-300 hover:shadow-[0_0_30px_rgba(139,92,246,0.5)]"
+            className="rounded-full bg-gradient-to-r from-primary to-secondary px-8 py-4 font-medium text-primary-foreground transition-shadow duration-300 hover:shadow-[0_0_30px_rgba(131,165,152,0.5)]"
           >
             Ver Trabalhos Realizados
           </Link>

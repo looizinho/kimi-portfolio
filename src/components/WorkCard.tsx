@@ -158,7 +158,7 @@ export function WorkCard({ work }: WorkCardProps) {
         )}
       </div>
 
-      <div className="absolute inset-0 rounded-3xl pointer-events-none border-2 border-transparent transition-all duration-500 group-hover:border-violet-500/50 group-hover:shadow-[0_0_30px_rgba(139,92,246,0.2)]" />
+      <div className="absolute inset-0 rounded-3xl pointer-events-none border-2 border-transparent transition-all duration-500 group-hover:border-primary/50 group-hover:shadow-[0_0_30px_rgba(131,165,152,0.2)]" />
     </article>
   );
 }

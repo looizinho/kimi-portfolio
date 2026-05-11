@@ -52,7 +52,7 @@ export function ProjectCard({
           {title}
         </h3>
 
-        <p className="mb-3 text-base font-medium text-cyan-400 sm:text-lg">{subtitle}</p>
+        <p className="mb-3 text-base font-medium text-primary sm:text-lg">{subtitle}</p>
 
         <p className="mb-6 max-w-xl line-clamp-3 text-zinc-300">{description}</p>
 
@@ -72,7 +72,7 @@ export function ProjectCard({
         className={cn(
           'pointer-events-none absolute inset-0 rounded-3xl',
           'border-2 border-transparent transition-all duration-500',
-          'group-hover:border-violet-500/50 group-hover:shadow-[0_0_30px_rgba(139,92,246,0.3)]'
+          'group-hover:border-primary/50 group-hover:shadow-[0_0_30px_rgba(131,165,152,0.3)]'
         )}
       />
     </div>

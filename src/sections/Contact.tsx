@@ -133,7 +133,7 @@ export function Contact() {
             href="mailto:lmoraes@me.com"
             className="group inline-flex items-center gap-4 text-2xl sm:text-3xl md:text-4xl text-zinc-300 hover:text-white transition-colors duration-300"
           >
-            <Mail className="w-8 h-8 text-violet-400" />
+            <Mail className="w-8 h-8 text-secondary" />
             <GlitchText>lmoraes@me.com</GlitchText>
             <ArrowUpRight className="w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </a>
@@ -149,8 +149,8 @@ export function Contact() {
               rel="noopener noreferrer"
               className="group flex items-center gap-4 p-4 rounded-xl glass hover:bg-white/10 transition-all duration-300 opacity-0"
             >
-              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-violet-600/20 to-cyan-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <link.icon className="w-6 h-6 text-violet-400 group-hover:text-cyan-400 transition-colors duration-300" />
+              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-secondary/20 to-primary/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <link.icon className="w-6 h-6 text-secondary group-hover:text-primary transition-colors duration-300" />
               </div>
               <div>
                 <div className="font-medium text-white underline-animation">
@@ -169,7 +169,7 @@ export function Contact() {
           </p>
           <div className="flex items-center gap-2 text-sm text-zinc-500">
             <span>Feito com</span>
-            <span className="text-pink-500">♥</span>
+            <span className="text-accent">♥</span>
             <span>e muita tecnologia</span>
           </div>
         </div>
