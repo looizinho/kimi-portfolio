@@ -41,24 +41,24 @@ export function ProjectCard({
           {tags.map((tag) => (
             <span
               key={`${title}-${tag}`}
-              className="rounded-full border border-border bg-card/60 dark:border-white/10 dark:bg-white/10 px-3 py-1 text-xs font-medium text-foreground/90 dark:text-white/90 backdrop-blur-sm"
+              className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm"
             >
               {tag}
             </span>
           ))}
         </div>
 
-        <h3 className="mb-2 font-['Space_Grotesk'] text-2xl font-bold text-foreground sm:text-3xl">
+        <h3 className="mb-2 font-['Space_Grotesk'] text-2xl font-bold text-white sm:text-3xl">
           {title}
         </h3>
 
-        <p className="mb-3 text-base font-medium text-primary sm:text-lg">{subtitle}</p>
+        <p className="mb-3 text-base font-medium text-cyan-300 sm:text-lg">{subtitle}</p>
 
-        <p className="mb-6 max-w-xl line-clamp-3 text-muted-foreground">{description}</p>
+        <p className="mb-6 max-w-xl line-clamp-3 text-zinc-300">{description}</p>
 
         <div
           className={cn(
-            'w-fit text-foreground font-medium flex items-center gap-2',
+            'w-fit text-white font-medium flex items-center gap-2',
             'transition-all duration-300',
             'opacity-80 group-hover:opacity-100'
           )}
