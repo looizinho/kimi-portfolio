@@ -60,8 +60,8 @@ export function validateData<T>(schema: z.ZodSchema<T>, data: unknown, dataName:
     return schema.parse(data);
   } catch (error) {
     if (error instanceof z.ZodError) {
-      const messages = error.errors
-        .map(err => `${err.path.join('.')}: ${err.message}`)
+      const messages = error.issues
+        .map((issue: z.ZodIssue) => `${issue.path.join('.')}: ${issue.message}`)
         .join('\n');
       console.error(`Erro ao validar ${dataName}:\n${messages}`);
       throw new Error(`Dados inválidos em ${dataName}. Verifique o console.`);
