@@ -111,7 +111,7 @@ export function About() {
         {/* Section Heading */}
         <h2
           ref={headingRef}
-          className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-16 text-center font-['Space_Grotesk']"
+          className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-16 text-center font-['Space_Grotesk']"
         >
           Áreas de{' '}
           <span className="bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">

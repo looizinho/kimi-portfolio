@@ -24,7 +24,7 @@ export function GalleryItem({ photo }: GalleryItemProps) {
             type="button"
             className={cn(
               'group relative w-full overflow-hidden rounded-2xl',
-              'border border-white/10 bg-white/5 backdrop-blur-sm',
+              'border border-border bg-card/50 dark:border-white/10 dark:bg-white/5 backdrop-blur-sm',
               'transition-transform duration-300 hover:-translate-y-1'
             )}
             aria-label={`Abrir foto: ${photo.alt}`}
@@ -38,13 +38,13 @@ export function GalleryItem({ photo }: GalleryItemProps) {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             {photo.date && (
-              <span className="absolute bottom-3 right-3 rounded-full bg-black/60 px-3 py-1 text-xs text-white/80">
+              <span className="absolute bottom-3 right-3 rounded-full bg-background/60 dark:bg-black/60 px-3 py-1 text-xs text-foreground/80 dark:text-white/80">
                 {photo.date}
               </span>
             )}
           </button>
         </DialogTrigger>
-        <DialogContent className="border-white/10 bg-zinc-950/95 p-0 sm:max-w-4xl">
+        <DialogContent className="border-border bg-background/95 dark:border-white/10 dark:bg-zinc-950/95 p-0 sm:max-w-4xl">
           <div className="grid gap-6 p-6 md:grid-cols-[minmax(0,1fr)_280px]">
             <div className="relative w-full overflow-hidden rounded-xl">
               <img
@@ -55,16 +55,16 @@ export function GalleryItem({ photo }: GalleryItemProps) {
             </div>
             <div className="flex h-full flex-col justify-between">
               <div>
-                <h3 className="text-xl font-semibold text-white font-['Space_Grotesk']">
+                <h3 className="text-xl font-semibold text-foreground font-['Space_Grotesk']">
                   {photo.alt}
                 </h3>
                 {photo.caption && (
-                  <p className="mt-3 text-sm text-zinc-300 leading-relaxed">
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                     {photo.caption}
                   </p>
                 )}
                 {photo.date && (
-                  <p className="mt-4 text-xs uppercase tracking-[0.2em] text-zinc-500">
+                  <p className="mt-4 text-xs uppercase tracking-[0.2em] text-muted-foreground">
                     {photo.date}
                   </p>
                 )}

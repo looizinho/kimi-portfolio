@@ -34,7 +34,7 @@ export function TechOrbit({ technologies, className }: TechOrbitProps) {
         ref={orbitRef}
         className={cn(
           'absolute w-[400px] h-[400px] rounded-full',
-          'border border-white/10',
+          'border border-border dark:border-white/10',
           !isPaused && 'orbit-animation'
         )}
         style={{
@@ -97,7 +97,7 @@ export function TechOrbit({ technologies, className }: TechOrbitProps) {
               }}
             >
               {/* Icon */}
-              <div className="text-white/80 hover:text-white transition-colors">
+              <div className="text-foreground/80 hover:text-foreground transition-colors">
                 {tech.icon}
               </div>
 
@@ -109,8 +109,8 @@ export function TechOrbit({ technologies, className }: TechOrbitProps) {
                   'text-center z-30',
                   'animate-in fade-in zoom-in duration-200'
                 )}>
-                  <p className="text-sm font-semibold text-white mb-1">{tech.name}</p>
-                  <p className="text-xs text-zinc-400">{tech.description}</p>
+                  <p className="text-sm font-semibold text-foreground mb-1">{tech.name}</p>
+                  <p className="text-xs text-muted-foreground">{tech.description}</p>
                 </div>
               )}
             </div>

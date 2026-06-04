@@ -37,10 +37,10 @@ export function SkillCard({
       </div>
 
       {/* Content */}
-      <h3 className="text-lg font-semibold text-white mb-2 font-['Space_Grotesk']">
+      <h3 className="text-lg font-semibold text-foreground mb-2 font-['Space_Grotesk']">
         {title}
       </h3>
-      <p className="text-sm text-zinc-400 leading-relaxed">
+      <p className="text-sm text-muted-foreground leading-relaxed">
         {description}
       </p>
 
