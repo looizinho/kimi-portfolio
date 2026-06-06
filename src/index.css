@@ -6,50 +6,60 @@
 
 @layer base {
   :root {
-    /* Gruvbox Dark Mode */
-    --background: 0 0% 16%;
-    --foreground: 43 59% 81%;
-    --card: 20 5% 22%;
-    --card-foreground: 43 59% 81%;
-    --popover: 20 3% 19%;
-    --popover-foreground: 43 59% 81%;
-    --primary: 157 16% 58%;
-    --primary-foreground: 20 5% 22%;
-    --secondary: 104 35% 62%;
-    --secondary-foreground: 20 5% 22%;
-    --muted: 30 12% 51%;
-    --muted-foreground: 28 11% 44%;
-    --accent: 157 16% 58%;
-    --accent-foreground: 20 5% 22%;
-    --destructive: 6 96% 59%;
-    --destructive-foreground: 43 59% 81%;
-    --border: 28 11% 44%;
-    --input: 20 5% 22%;
-    --ring: 157 16% 58%;
+    /* Modern Dark Theme - Cyan + Purple + Magenta */
+    --background: 220 13% 9%;           /* #0f1419 - Deep blue-black */
+    --foreground: 220 9% 92%;           /* #e8eaef - Warm off-white */
+    --card: 220 13% 15%;                /* #1a1f2e - Slightly lighter for elevation */
+    --card-foreground: 220 9% 92%;
+    --popover: 220 13% 15%;
+    --popover-foreground: 220 9% 92%;
+
+    /* Primary - Electric Cyan (Vibrante) */
+    --primary: 190 95% 45%;             /* #00d4ff - Electric cyan */
+    --primary-foreground: 220 13% 9%;
+
+    /* Secondary - Deep Purple */
+    --secondary: 270 100% 55%;          /* #b700ff - Vibrant purple */
+    --secondary-foreground: 220 9% 92%;
+
+    /* Accent - Hot Magenta/Pink */
+    --accent: 320 100% 50%;             /* #ff00aa - Hot magenta */
+    --accent-foreground: 220 9% 92%;
+
+    /* Utilities */
+    --muted: 220 8% 45%;                /* #5a6373 - Neutral gray */
+    --muted-foreground: 220 8% 65%;
+    --destructive: 0 84% 60%;           /* #ff2d2d - Red for errors */
+    --destructive-foreground: 220 9% 92%;
+    --border: 220 13% 22%;              /* #2a3447 - Subtle border */
+    --input: 220 13% 15%;
+    --ring: 190 95% 45%;                /* Cyan for focus rings */
     --radius: 0.625rem;
   }
 
   .light {
-    /* Gruvbox Light Mode */
-    --background: 48 87% 88%;
-    --foreground: 20 5% 22%;
-    --card: 43 59% 81%;
-    --card-foreground: 20 5% 22%;
-    --popover: 46 67% 84%;
-    --popover-foreground: 20 5% 22%;
-    --primary: 190 89% 25%;
-    --primary-foreground: 48 87% 88%;
-    --secondary: 143 30% 37%;
-    --secondary-foreground: 48 87% 88%;
-    --muted: 30 12% 51%;
-    --muted-foreground: 35 17% 59%;
-    --accent: 190 89% 25%;
-    --accent-foreground: 48 87% 88%;
-    --destructive: 358 100% 31%;
-    --destructive-foreground: 48 87% 88%;
-    --border: 35 17% 59%;
-    --input: 43 59% 81%;
-    --ring: 190 89% 25%;
+    /* Light Mode - Adjusted for contrast */
+    --background: 220 20% 96%;          /* #f0f2f7 - Very light blue-white */
+    --foreground: 220 13% 9%;           /* #0f1419 - Dark text */
+    --card: 220 20% 99%;                /* #fafbfc - Almost white */
+    --card-foreground: 220 13% 9%;
+    --popover: 220 20% 99%;
+    --popover-foreground: 220 13% 9%;
+
+    --primary: 190 95% 35%;             /* Darker cyan for light mode */
+    --primary-foreground: 220 20% 96%;
+    --secondary: 270 100% 45%;          /* Darker purple */
+    --secondary-foreground: 220 20% 96%;
+    --accent: 320 100% 40%;             /* Darker magenta */
+    --accent-foreground: 220 20% 96%;
+
+    --muted: 220 8% 50%;
+    --muted-foreground: 220 8% 35%;
+    --destructive: 0 84% 50%;
+    --destructive-foreground: 220 20% 96%;
+    --border: 220 13% 85%;
+    --input: 220 20% 99%;
+    --ring: 190 95% 35%;
   }
 }
 
@@ -57,17 +67,17 @@
   * {
     @apply border-border;
   }
-  
+
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Space Grotesk', sans-serif;
   }
@@ -76,6 +86,7 @@
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -91,17 +102,17 @@
   background: hsl(var(--primary));
 }
 
-/* Text Glow Animation */
+/* Text Glow Animation - Updated for cyan */
 @keyframes text-glow {
   0%, 100% {
-    text-shadow: 0 0 20px rgba(131, 165, 152, 0.5),
-                 0 0 40px rgba(131, 165, 152, 0.3),
-                 0 0 60px rgba(142, 192, 124, 0.2);
+    text-shadow: 0 0 20px hsla(190, 95%, 45%, 0.5),
+                 0 0 40px hsla(190, 95%, 45%, 0.3),
+                 0 0 60px hsla(320, 100%, 50%, 0.2);
   }
   50% {
-    text-shadow: 0 0 30px rgba(131, 165, 152, 0.7),
-                 0 0 60px rgba(131, 165, 152, 0.5),
-                 0 0 90px rgba(142, 192, 124, 0.3);
+    text-shadow: 0 0 30px hsla(190, 95%, 45%, 0.7),
+                 0 0 60px hsla(190, 95%, 45%, 0.5),
+                 0 0 90px hsla(320, 100%, 50%, 0.3);
   }
 }
 
@@ -253,6 +264,21 @@
   color: hsl(var(--foreground));
 }
 
+/* Focus Visible for Accessibility */
+:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -261,5 +287,19 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* Mobile Responsive Improvements */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px; /* Prevent auto-zoom on iOS */
+  }
+}
+
+/* Ensure proper spacing on small devices */
+@media (max-width: 640px) {
+  :root {
+    --radius: 0.5rem;
   }
 }
