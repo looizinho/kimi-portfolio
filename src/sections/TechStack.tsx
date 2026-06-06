@@ -131,7 +131,7 @@ export function TechStack() {
         {/* Section Heading */}
         <h2
           ref={headingRef}
-          className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-8 text-center font-['Space_Grotesk']"
+          className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-8 text-center font-['Space_Grotesk']"
         >
           Tecnologias &{' '}
           <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
@@ -139,7 +139,7 @@ export function TechStack() {
           </span>
         </h2>
 
-        <p className="text-zinc-400 text-center max-w-2xl mx-auto mb-16">
+        <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-16">
           Stack tecnológico utilizado para criar experiências audiovisuais imersivas e interativas
         </p>
 
@@ -157,10 +157,10 @@ export function TechStack() {
             { label: 'Tecnologias', value: '20+' },
           ].map((stat) => (
             <div key={stat.label} className="p-4">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2 font-['Space_Grotesk']">
+              <div className="text-3xl md:text-4xl font-bold text-foreground mb-2 font-['Space_Grotesk']">
                 {stat.value}
               </div>
-              <div className="text-sm text-zinc-500">{stat.label}</div>
+              <div className="text-sm text-muted-foreground">{stat.label}</div>
             </div>
           ))}
         </div>

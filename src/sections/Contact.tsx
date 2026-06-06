@@ -118,7 +118,7 @@ export function Contact() {
         {/* Section Heading */}
         <h2
           ref={headingRef}
-          className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-8 font-['Space_Grotesk']"
+          className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-8 font-['Space_Grotesk']"
         >
           <TypewriterText
             text="Vamos criar algo juntos?"
@@ -131,7 +131,7 @@ export function Contact() {
         <div ref={emailRef} className="mb-12 opacity-0">
           <a
             href="mailto:lmoraes@me.com"
-            className="group inline-flex items-center gap-4 text-2xl sm:text-3xl md:text-4xl text-zinc-300 hover:text-white transition-colors duration-300"
+            className="group inline-flex items-center gap-4 text-2xl sm:text-3xl md:text-4xl text-muted-foreground hover:text-foreground transition-colors duration-300"
           >
             <Mail className="w-8 h-8 text-secondary" />
             <GlitchText>lmoraes@me.com</GlitchText>
@@ -153,21 +153,21 @@ export function Contact() {
                 <link.icon className="w-6 h-6 text-secondary group-hover:text-primary transition-colors duration-300" />
               </div>
               <div>
-                <div className="font-medium text-white underline-animation">
+                <div className="font-medium text-foreground underline-animation">
                   {link.name}
                 </div>
-                <div className="text-sm text-zinc-500">{link.description}</div>
+                <div className="text-sm text-muted-foreground">{link.description}</div>
               </div>
             </a>
           ))}
         </div>
 
         {/* Footer */}
-        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-zinc-500">
+        <div className="pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Luizinho Neto. Todos os direitos reservados.
           </p>
-          <div className="flex items-center gap-2 text-sm text-zinc-500">
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <span>Feito com</span>
             <span className="text-accent">♥</span>
             <span>e muita tecnologia</span>

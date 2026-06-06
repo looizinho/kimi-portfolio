@@ -41,7 +41,7 @@ export function ProjectCard({
           {tags.map((tag) => (
             <span
               key={`${title}-${tag}`}
-              className="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs font-medium text-white/90 backdrop-blur-sm"
+              className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm"
             >
               {tag}
             </span>
@@ -52,7 +52,7 @@ export function ProjectCard({
           {title}
         </h3>
 
-        <p className="mb-3 text-base font-medium text-primary sm:text-lg">{subtitle}</p>
+        <p className="mb-3 text-base font-medium text-cyan-300 sm:text-lg">{subtitle}</p>
 
         <p className="mb-6 max-w-xl line-clamp-3 text-zinc-300">{description}</p>
 

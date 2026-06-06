@@ -53,7 +53,7 @@ export function Navigation() {
         className={cn(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
           isScrolled
-            ? 'py-3 sm:py-4 bg-black/80 backdrop-blur-lg border-b border-white/5'
+            ? 'py-3 sm:py-4 bg-background/80 dark:bg-black/80 backdrop-blur-lg border-b border-border dark:border-white/5'
             : 'py-4 sm:py-6 bg-transparent'
         )}
       >
@@ -63,7 +63,7 @@ export function Navigation() {
             <a
               href="#hero"
               onClick={(e) => handleNavClick(e, '#hero')}
-              className="text-lg sm:text-xl font-bold text-white font-['Space_Grotesk'] hover:text-primary transition-colors flex-shrink-0"
+              className="text-lg sm:text-xl font-bold text-foreground font-['Space_Grotesk'] hover:text-primary transition-colors flex-shrink-0"
             >
               LN<span className="text-primary">.</span>
             </a>
@@ -75,7 +75,7 @@ export function Navigation() {
                   key={item.label}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className="text-sm text-zinc-400 hover:text-primary transition-colors duration-300 underline-animation whitespace-nowrap"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 underline-animation whitespace-nowrap"
                 >
                   {item.label}
                 </a>
@@ -87,7 +87,7 @@ export function Navigation() {
               type="button"
               aria-label={isMobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
               aria-expanded={isMobileMenuOpen}
-              className="md:hidden inline-flex items-center justify-center rounded-lg border border-white/20 bg-black/60 p-2 sm:p-2.5 text-white backdrop-blur-sm transition-colors hover:bg-black/80 hover:border-white/40 focus-visible:outline-2 focus-visible:outline-primary flex-shrink-0"
+              className="md:hidden inline-flex items-center justify-center rounded-lg border border-border bg-card/60 dark:border-white/20 dark:bg-black/60 p-2 sm:p-2.5 text-foreground backdrop-blur-sm transition-colors hover:bg-card/80 dark:hover:bg-black/80 dark:hover:border-white/40 focus-visible:outline-2 focus-visible:outline-primary flex-shrink-0"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? (
@@ -103,7 +103,7 @@ export function Navigation() {
       {/* Mobile Menu */}
       <div
         className={cn(
-          'fixed inset-0 z-40 bg-black/95 backdrop-blur-lg transition-all duration-500 md:hidden',
+          'fixed inset-0 z-40 bg-background/95 dark:bg-black/95 backdrop-blur-lg transition-all duration-500 md:hidden',
           isMobileMenuOpen
             ? 'opacity-100 pointer-events-auto'
             : 'opacity-0 pointer-events-none'
@@ -118,7 +118,7 @@ export function Navigation() {
               href={item.href}
               onClick={(e) => handleNavClick(e, item.href)}
               className={cn(
-                'text-xl sm:text-2xl font-medium text-white hover:text-primary transition-all duration-300',
+                'text-xl sm:text-2xl font-medium text-foreground hover:text-primary transition-all duration-300',
                 isMobileMenuOpen
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-4'

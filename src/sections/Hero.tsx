@@ -71,7 +71,7 @@ export function Hero() {
         {/* Main Heading */}
         <h1
           ref={headingRef}
-          className="text-4xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-white mb-6 font-['Space_Grotesk'] tracking-tight text-glow"
+          className="text-4xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-foreground mb-6 font-['Space_Grotesk'] tracking-tight text-glow"
         >
           {decodedText || originalText}
         </h1>
@@ -79,12 +79,12 @@ export function Hero() {
         {/* Subheading */}
         <p
           ref={subheadingRef}
-          className="text-lg sm:text-xl md:text-2xl text-zinc-400 mb-12 opacity-0"
+          className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-12 opacity-0"
         >
           <span className="text-secondary">Tecnologia</span>
-          <span className="mx-3 text-zinc-600">·</span>
+          <span className="mx-3 text-muted">·</span>
           <span className="text-primary">Audiovisual</span>
-          <span className="mx-3 text-zinc-600">·</span>
+          <span className="mx-3 text-muted">·</span>
           <span className="text-accent">Interatividade</span>
         </p>
 
@@ -98,7 +98,7 @@ export function Hero() {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <ChevronDown className="w-8 h-8 text-zinc-500" />
+        <ChevronDown className="w-8 h-8 text-muted-foreground" />
       </div>
 
       {/* Decorative Elements */}
