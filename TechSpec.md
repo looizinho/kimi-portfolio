@@ -51,17 +51,17 @@ None required - custom implementations preferred for unique visual effects.
 ## Animation Library Choices
 
 ### Primary: GSAP (GreenSock)
-**Rationale**: Industry-standard for complex scroll animations, precise timeline control, excellent performance.
+**Rationale**: Industry‑standard for complex scroll animations, precise timeline control, excellent performance.
 - **Plugins**: ScrollTrigger, SplitText (or SplitType alternative)
-- **Use Cases**: 
+- **Use Cases**:
   - Horizontal scroll pinning
   - Character decode animation
-  - Scroll-triggered reveals
+  - Scroll‑triggered reveals
   - Typewriter effects
 
 ### Secondary: Three.js + React Three Fiber
 **Rationale**: Required for WebGL fluid simulation and image distortion effects.
-- **Add-ons**: @react-three/drei for helpers
+- **Add‑ons**: @react-three/drei for helpers
 - **Use Cases**:
   - Hero fluid background
   - Project image liquid distortion
@@ -84,53 +84,47 @@ None required - custom implementations preferred for unique visual effects.
 
 ## Project File Structure
 
-```
-app/
-├── src/
-│   ├── components/
-│   │   ├── ui/                    # shadcn/ui components
-│   │   │   ├── button.tsx
-│   │   │   ├── card.tsx
-│   │   │   ├── badge.tsx
-│   │   │   ├── tooltip.tsx
-│   │   │   └── separator.tsx
-│   │   ├── FluidBackground.tsx    # WebGL fluid simulation
-│   │   ├── TiltCard.tsx           # 3D tilt effect wrapper
-│   │   ├── HorizontalScroll.tsx   # Pinned horizontal scroll
-│   │   ├── TechOrbit.tsx          # Orbiting tech stack
-│   │   ├── GlitchText.tsx         # Glitch effect component
-│   │   ├── MagneticButton.tsx     # Magnetic cursor button
-│   │   ├── TypewriterText.tsx     # Typewriter animation
-│   │   ├── ProjectCard.tsx        # Project card with effects
-│   │   ├── SkillCard.tsx          # Skill card with glow
-│   │   └── Navigation.tsx         # Site navigation
-│   ├── sections/
-│   │   ├── Hero.tsx               # Hero section
-│   │   ├── About.tsx              # Skills/About section
-│   │   ├── Projects.tsx           # Projects gallery
-│   │   ├── TechStack.tsx          # Tech orbit section
-│   │   └── Contact.tsx            # Contact/Footer section
-│   ├── hooks/
-│   │   ├── useMousePosition.ts    # Mouse tracking hook
-│   │   ├── useSmoothScroll.ts     # Lenis integration
-│   │   ├── useScrollVelocity.ts   # Scroll speed detection
-│   │   └── useInView.ts           # Intersection observer
-│   ├── lib/
-│   │   ├── utils.ts               # Utility functions
-│   │   ├── animations.ts          # GSAP animation presets
-│   │   └── shaders.ts             # GLSL shader code
-│   ├── types/
-│   │   └── index.ts               # TypeScript types
-│   ├── App.tsx                    # Main app component
-│   ├── main.tsx                   # Entry point
-│   └── index.css                  # Global styles
-├── public/
-│   └── images/                    # Project images
+```text
+src/
+├── components/
+│   ├── ui/                    # shadcn/ui components (button, card, badge, tooltip, separator, …)
+│   ├── FluidBackground.tsx    # WebGL fluid simulation
+│   ├── TiltCard.tsx           # 3D tilt effect wrapper
+│   ├── HorizontalScroll.tsx   # Pinned horizontal scroll
+│   ├── TechOrbit.tsx          # Orbiting tech stack
+│   ├── GlitchText.tsx         # Glitch effect component
+│   ├── MagneticButton.tsx     # Magnetic cursor button
+│   ├── TypewriterText.tsx     # Typewriter animation
+│   ├── ProjectCard.tsx        # Project card with effects
+│   ├── SkillCard.tsx          # Skill card with glow
+│   └── Navigation.tsx        # Site navigation
+├── sections/
+│   ├── Hero.tsx               # Hero section
+│   ├── About.tsx              # Skills/About section
+│   ├── Projects.tsx           # Projects gallery
+│   ├── TechStack.tsx          # Tech orbit section
+│   └── Contact.tsx            # Contact/Footer section
+├── hooks/
+│   ├── useMousePosition.ts    # Mouse tracking hook
+│   ├── useSmoothScroll.ts     # Lenis integration
+│   ├── useScrollVelocity.ts   # Scroll speed detection
+│   └── useInView.ts           # Intersection observer
+├── lib/
+│   ├── utils.ts               # Utility functions
+│   ├── animations.ts          # GSAP animation presets
+│   └── shaders.ts             # GLSL shader code
+├── types/
+│   └── index.ts               # TypeScript types
+├── App.tsx                    # Main app component
+├── main.tsx                   # Entry point
+└── index.css                  # Global styles
+public/
+├── images/                    # Project images
+├── index.html
 ├── package.json
 ├── tsconfig.json
 ├── vite.config.ts
-├── tailwind.config.ts
-└── index.html
+└── tailwind.config.ts
 ```
 
 ## Dependencies
@@ -157,7 +151,7 @@ app/
 }
 ```
 
-### UI & Styling
+### UI \u0026 Styling
 ```json
 {
   "tailwindcss": "^3.4.0",
@@ -171,9 +165,6 @@ app/
 ## Installation Commands
 
 ```bash
-# Initialize project
-bash /app/.kimi/skills/webapp-building/scripts/init-webapp.sh "Luizinho Neto Portfolio"
-
 # Install animation libraries
 npm install gsap @gsap/react lenis three @react-three/fiber @react-three/drei split-type
 
@@ -201,7 +192,7 @@ npm install lucide-react
 ### Images
 - Lazy load project images
 - Use WebP format with fallbacks
-- Implement blur-up placeholder
+- Implement blur‑up placeholder
 
 ### General
 - Code splitting for heavy components
@@ -213,7 +204,7 @@ npm install lucide-react
 | Breakpoint | Width | Adjustments |
 |------------|-------|-------------|
 | Mobile | < 640px | Disable WebGL, simplify animations, stack layout |
-| Tablet | 640-1024px | Reduce orbit size, simplify tilt |
+| Tablet | 640‑1024px | Reduce orbit size, simplify tilt |
 | Desktop | > 1024px | Full experience |
 
 ## Accessibility
@@ -222,3 +213,4 @@ npm install lucide-react
 - Keyboard navigation: Ensure all interactive elements are focusable
 - Color contrast: Maintain WCAG 4.5:1 ratio
 - Screen readers: Proper ARIA labels on interactive components
+
