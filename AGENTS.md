@@ -1,5 +1,7 @@
 # AGENTS.md
 
+#react #typescript #vite #tailwind
+
 This file provides guidance to WARP (warp.dev) when working with code in this repository.
 
 ## Repo layout
