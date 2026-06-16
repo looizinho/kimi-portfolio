@@ -54,4 +54,3 @@ This file provides guidance to WARP (warp.dev) when working with code in this re
   - TypeScript: project references (`tsconfig.json` references `tsconfig.app.json` and `tsconfig.node.json`); the build uses incremental TS via `tsc -b`.
   - ESLint: flat config in `eslint.config.js` (JS + TS + React Hooks + React Refresh rules).
 
-- Hello World! 
